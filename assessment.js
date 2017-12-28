@@ -1,10 +1,11 @@
 
 // #1 Create a variable called hello and assign it the string 'goodbye'
-
+var hello = 'goodbye'
 
 
 // #2 Use the variable iLove to create a new variable called iLoveCode that is assigned the string "I love code"
 var iLove = 'I love';
+iLove = "I love code"
 
 // #3  Make an object called bob and give it the following properties
 // bob has a height of 6ft (string)
@@ -20,11 +21,15 @@ var myShirt = {
 	color: 'red'
 };
 
+myShirt.color = "pink"
+
 // Change my shirt type to spandex using square bracket notation
 var myOtherShirt = {
 	type: 'polo',
 	color: 'red'
 };
+
+myOtherShirt[0] = "spandex"
 
 // #5 Create an object that tracks a count of animals in a zoo.  Call it 'zoo'
 // The key should be the animal name(string) and the value should be how many there are.
@@ -41,44 +46,111 @@ var snake = {
 	runs: 'legless'
 };
 
+for (var i = 0; i < snake.length; i++;) {
+	if (snake.indexOf(i).startsWith('s') === true) {
+		snake[i] = 's'
+	}
+}
+
 //#7 Create an array of strings that are the 7 primary colors in the rainbow - red, orange, yellow, green, blue, indigo, violet (lower-case). Call your array rainbowColors
 
 // #8 Using this array do the following
 var heroes = ['superman', 'batman', 'flash'];
 // add 'wonderwoman' to the end
 
+heroes.push("wonderwoman")
+
 // remove 'superman' and store him in a variable called firstHero
+var firstHero = heroes.splice(0, 1)
 
 // add 'spongebob' to the start of the array
 
+heroes.unshift("spongebob")
+
 // remove 'flash' from the array and store him in a variable called secondHero
+//My notes - [spongebob, batman, flash, wonderwoman]
+var secondHero = heroes.splice(2, 1)
+
 
 // leave batman in the array but put a copy of him on a variable called thirdHero
+//My notes - [spongebob, batman, wonderwoman]
+var thirdHero = heroes.slice(1, 1)
 
 
 
 
 // #9 Write a function called addItem that takes in an array and an item, adds the item to
 // the array, and returns the array with the added item.
+var a = ['penny', 'nickel', 'dime']
+var b = ['quarter']
+
+function addItem(a, b) {
+	a.push(b)
+	return a
+}
 
 
 // #10 Write a function called removeItem that takes in an array of strings, and a string.
 
 // Removes all instances of that string from the array. And return the modified array.
 // The order of the array should not be changed
+var a = ['penny', 'nickel', 'dime', 'quarter']
+var b = ['quarter']
+
+function removeItem(a, b) {
+	for (var i = 0; i < a.length; i++) {
+		if (a.indexOf(i) === b) {
+			a.splice(i, 1)
+		}
+	}
+	return a
+}
 
 // #11 Write a function  called doubleTheFun that takes 1 parameter. It should double numbers, and
 // repeats strings. example 4->8, 2.5->5, 'Awesome'->'AwesomeAwesome'
 
+var a = 2
 
+function doubleTheFun(a) {
+	if (typeof a === 'number') {
+			a = a * 2
+			return a
+	} else if (typeof a === 'string') {
+		a = a.concat(a)
+		return a
+	}
+
+}
 
 // #12 Write function getValueOfProperty that takes in an object, and the name of a property on the object
 // return the value from the object that corresponds to the property
+
+var apples = {
+	color: 'green',
+	size: 'small',
+	taste: 'sour'
+}
+
+function getValueOfProperty(a, 'size') {
+	for (var i = 0; i < apples.length, i++) {
+		if (var[i] === 'size') {
+			return apples.size
+		}
+	}
+}
 
 
 // #13 Write a function called makeChatMessage that takes in a message and author as parameters
 // and returns an object with a message, author, and timestamp, that is
 // the current time as a Date object
+
+var a = 'Harry Potter'
+var b = "JK Rowling"
+
+function makeChatMessage(a, b) (
+	var answer = {a, b, Date.now()}
+	return answer
+)
 
 // #14 Create a function called coderTest that takes in an object that is a person. It looks to see if the person’s name is Jeremy and then changes the person object to have a property called lovesCode with a value of 10.  If their name is Brack set lovesCode to 0.  otherwise set lovesCode to 5.
 
@@ -94,4 +166,3 @@ var heroes = ['superman', 'batman', 'flash'];
 
 // #16 Create a function called callerBack that takes in a function (holla) and a string parameter(back) and invokes it(holla) with the argument string(back) + ' back'."
 // example - If I call you with 'Give it' you should invoke holla with 'Give it back'
-
